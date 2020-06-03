@@ -1,0 +1,29 @@
+.banner {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    &__inner {
+        position: relative;
+        max-width: 800px;
+        margin: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+        @include resp((padding-top, padding-bottom), 90px, 150px);
+
+        @include mq($from:830px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    &__cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        a {
+            &:not(:last-of-type) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

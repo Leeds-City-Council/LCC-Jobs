@@ -1,0 +1,52 @@
+// @mixin resp($properties, $min-screen:320px, $max-screen:1440px, $min-value, $max-value) {
+@mixin resp($properties, $min-value, $max-value, $min-screen:320px, $max-screen:1440px) {
+    & {
+        @each $property in $properties {
+            #{$property}: $min-value;
+        }
+
+        @media screen and (min-width: $min-screen) {
+            @each $property in $properties {
+                #{$property}: calc-interpolation($min-screen, $min-value, $max-screen, $max-value);
+            }
+        }
+
+        @media screen and (min-width: $max-screen) {
+            @each $property in $properties {
+                #{$property}: $max-value;
+            }
+        }
+    }
+}
+
+// Requires the calc-interpolation function which can also be used independently
+
+@function calc-interpolation($min-screen, $min-value, $max-screen, $max-value) {
+    $a: ($max-value - $min-value) / ($max-screen - $min-screen);
+    $b: $min-value - $a * $min-screen;
+
+    $sign: "+";
+
+    @if ($b < 0) {
+        $sign: "-";
+        $b: abs($b);
+    }
+
+    @return calc(#{$a*100}vw #{$sign} #{$b});
+}
+
+// Indrek Pass also has a fantastic mixin here: http://sassmeister.com/gist/7f22e44ace49b5124eec
+/* Single property */
+// html {
+// 	@include resp(font-size, $min_width, $max_width, 14px, 20px);
+// }
+
+// /* Multiple properties with same values */
+// h1,h2,h3,h4,h5 {
+// 	@include resp((padding-top, padding-bottom), 20rem, 70rem, 0rem, .5rem);
+// }
+//@include resp(font-size, 70px, 140px);
+
+
+$min_width: 320px;
+$max_width: 1440px;

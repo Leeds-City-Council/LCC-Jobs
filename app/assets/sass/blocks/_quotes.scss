@@ -1,0 +1,63 @@
+.quotes {
+    &__header {
+        background-size: cover;
+        background-position: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        @include resp((padding-top, padding-bottom), 50px, 130px);
+
+        @include mq($from:1204px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        h2 {
+            position: relative;
+            color: $white;
+            max-width: 1164px;
+            margin: auto;
+        }
+    }
+
+    &__wrapper {
+        max-width: 1164px;
+        margin:auto;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        @include mq($from:1204px) {
+            padding:0;
+            justify-content: space-between;
+        }
+
+        li {
+            padding:0;
+            max-width:335px;
+
+            &:before {display:none;}
+
+            blockquote {
+                margin:50px 0 0;
+                padding-top:80px;
+                text-align: center;
+                
+                &:before {
+                    font-size:150px;
+                    left: 50%;
+                    line-height:90px;
+                    transform: translateX(-50%);
+                    top: 0;
+                    line-height: 85px;
+                }
+            }
+        }
+    }
+
+}

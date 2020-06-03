@@ -1,0 +1,274 @@
+.header-nav-container,
+.masterhead {
+    position: relative;
+}
+
+#containerSiteStatement {
+    background: #2c3e50;
+    width:100%;
+
+    #siteStatement {
+        margin: auto;
+        font-size:16px;
+
+        @media (min-width: 767px) {
+            font-size:19px;
+        }
+
+        a {
+            &:focus {
+                background-color: #FFBF47!important;
+                color: #212224!important;
+                text-decoration: none;
+            }
+        }
+    }
+
+    #siteStatement .container-fluid {
+        padding: 25px;
+        max-width: 1164px;
+        margin: auto;
+
+        @media (min-width: 1214px) {
+            padding:25px 0;
+        }
+
+        p {
+            color: #fff;
+            margin: 0 0 20px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: underline;
+            display: inline-block;
+
+            &:focus,
+            &:hover {
+                color: #ddd;
+                text-decoration: underline;
+            }
+
+            &.submit {
+                background: #c0392b;
+                border-radius: 0;
+                padding: 12px 20px;
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+ul.menu {
+    float: left;
+    margin: 0;
+    padding: 0;
+
+    li {
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+#containerSiteStatement #siteStatement .container-fluid a.submit {
+
+    &:focus,
+    &:hover {
+        background: #e74c3c;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 767px) {
+    #containerSiteStatement #siteStatement {
+        p {
+            font-size: 13px;
+            line-height: 1.4em;
+        }
+
+        a#ck_acpt {
+            font-size: 14px;
+            display: block;
+            text-align: center;
+            line-height: 1.4em;
+        }
+    }
+}
+
+ul.menu {
+    list-style: none;
+
+    li a {
+        font-size: 17px;
+        font-weight: 700;
+        padding: 11px 15px;
+        line-height: 40px;
+        min-height: 62px;
+        display: block;
+
+        &:focus,
+        &:hover {
+            background: #dedede;
+            text-decoration: none;
+        }
+
+        &.myAccount {
+            margin: 10px;
+            padding: 0 15px;
+            min-height: 38px;
+            line-height: 38px;
+            border: 1px solid;
+
+            span {
+                display: inline-block;
+            }
+
+            &:after {
+                font-family: FontAwesome;
+                content: "\f007";
+                font-size: 18px;
+                padding: 0 5px;
+            }
+        }
+
+        &.main-menu,
+        &.search {
+            display: none;
+        }
+
+        &.main-menu:before {
+            font-family: FontAwesome;
+            font-size: 25px;
+            float: right;
+        }
+
+        &.search {
+            &:before {
+                font-family: FontAwesome;
+                font-size: 25px;
+                float: right;
+                content: "\f002";
+            }
+
+            background: #cdcdcd;
+
+            &.active {
+                &:before {
+                    content: "\f00d";
+                    padding: 0 2px;
+                }
+
+                background: #bdc3c7;
+            }
+
+            &:focus,
+            &:hover {
+                background: #bdc3c7;
+            }
+        }
+
+        &.main-menu {
+            background: #133E8D;
+            color: #fff;
+
+            &:before {
+                content: "\f0c9";
+                padding-left: 5px;
+            }
+
+            &.active {
+                &:before {
+                    content: "\f00d";
+                    padding-left: 7px;
+                }
+
+                background: #0e2e69;
+            }
+
+            &:focus,
+            &:hover {
+                background: #0e2e69;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    ul.menu li a {
+
+        &.main-menu,
+        &.search {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    ul.menu li a {
+        padding: 9px;
+    }
+}
+
+@media (max-width: 550px) {
+    ul.menu li a {
+
+        &.myAccount span,
+        &.signin {
+            display: none;
+        }
+    }
+}
+
+.masterhead {
+    background: #fff;
+    width: 100%;
+
+    a.navbar-brand {
+        background-image: url(images/lcclogo.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: 58px;
+        width: 120px;
+    }
+}
+
+@media (max-width: 767px) {
+    .masterhead .container-fluid {
+        padding-right: 0;
+    }
+
+    .logo {
+        height: 100px;
+        margin: 20px auto;
+    }
+}
+
+#skiplink-container {
+    .skip {
+        left: -999px;
+        position: absolute;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        z-index: -999;
+        font-size:16px;
+        
+        &:focus {
+            background-color: #FFBF47!important;
+            color: #212224!important;
+            text-decoration: none;
+            outline: 0;
+            left: 8px;
+            top: 8px;
+            width: auto;
+            height: auto;
+            overflow: auto;
+            z-index: 999;
+            padding: .625em;
+        }
+    }
+}

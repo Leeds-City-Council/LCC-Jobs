@@ -1,0 +1,14 @@
+.strapline {
+    text-align:center;
+    max-width: 690px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+    @include resp((margin-top, margin-bottom), 50px, 100px);
+    @include mq($from:1190px) {
+        padding:0;
+    }
+    p {
+        margin-bottom:30px;
+    }
+}

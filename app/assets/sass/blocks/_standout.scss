@@ -1,0 +1,34 @@
+.standout {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    @include resp((margin-top, margin-bottom), 50px, 100px);
+
+    &--text {}
+
+    &--image {
+        margin: 50px auto;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: $white;
+        @include resp((padding-top, padding-bottom), 50px, 150px);
+
+        @include mq($from:phablet) {
+            max-width: calc(100% - 40px);
+        }
+    }
+
+    &__inner {
+        position: relative;
+        max-width: 750px;
+        margin: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        @include mq($from:680px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+.split {
+    margin: auto;
+    padding: 0 15px;
+    position: relative;
+    max-width: 700px;
+    @include resp((margin-bottom,margin-top), 50px, 100px);
+
+    @include mq($from:1194px) {
+        padding: 0;
+    }
+
+    @include mq($from:desktop) {
+        max-width: 1164px;
+        display:flex;
+        align-items: center;
+    }
+
+    img {
+        width:100%;
+        box-shadow: 0 0 30px -10px rgba(0,0,0,0.5);
+    }
+
+    &--reverse {
+        @include mq($from:desktop) {
+            flex-direction:row-reverse;
+            .split__col:last-of-type {
+                margin-left:0;
+                margin-right:auto;
+            }
+        }
+    }
+
+    &--tall {
+        .split__col:last-of-type {
+            @include mq($from:desktop) {
+                width:39%;
+            }
+        }
+    }
+
+    &__col {
+        &:first-of-type {
+            margin-bottom:30px;
+            @include mq($from:desktop) {
+                width:49%;
+                margin-bottom:0;
+            }
+        }
+        &:last-of-type {
+            @include mq($from:desktop) {
+                width:47%;
+                margin-left:auto;
+            }
+        }
+    }
+}

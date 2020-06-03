@@ -1,0 +1,20 @@
+body {
+    nav {
+        ul {
+            .ms-listMenu-editLink {display:none !important;}
+        }
+    } 
+    #s4-bodyContainer {
+        padding-bottom:0;
+    }
+    #ms-designer-ribbon {
+        top: 72px !important;
+        position: fixed !important;
+    }
+    .ms-core-listMenu-horizontalBox li.static > .ms-core-listMenu-item {
+        margin:0;
+    }
+    .ms-webpartzone-cell {
+        margin-bottom:0;
+    }
+}

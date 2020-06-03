@@ -1,0 +1,30 @@
+.intro {
+    max-width:1160px;
+    overflow:hidden;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+    @include resp((margin-top, margin-bottom), 50px, 100px);
+    @include mq($from:1190px) {
+        padding:0;
+    }
+
+    p {
+        &:first-of-type {margin-top:0;}
+    }
+
+    &__one {
+        @include mq($from:desktop) {
+            width:39%;
+            float:left;
+        }
+    }
+
+    &__two {
+        @include mq($from:desktop) {
+            width:49%;
+            float:right;
+        }
+    }
+
+}

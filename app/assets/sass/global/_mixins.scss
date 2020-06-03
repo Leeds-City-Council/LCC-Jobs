@@ -1,0 +1,21 @@
+// Font smoothing
+@mixin antialias {
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Media Queries - https://github.com/sass-mq/sass-mq/
+$mq-breakpoints: (mobile: 320px,
+    mobileX: 450px,
+    phablet: 600px,
+    tablet: 740px,
+    desktop: 980px,
+    desktopL: 1024px,
+    wide: 1400px,
+    xwide: 1500px);
+
+@import "mq";
+
+// For dev only
+$mq-show-breakpoints: (mobile, mobileX, phablet, tablet, desktop, desktopL, wide, xwide);

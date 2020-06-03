@@ -1,0 +1,258 @@
+.footer {
+    margin-top:0;
+    
+    &__bottom {
+        background: $teal;
+        color: $white;
+        padding: 0 15px;
+        @include resp((padding-top, padding-bottom), 30px, 50px);
+
+        @include mq($from:955px) {
+            padding: 50px 15px;
+        }
+
+        @include mq($from:1337px) {
+            padding: 50px 0;
+        }
+
+        a {
+            color: $white;
+            font-family: $primary;
+            font-weight: normal;
+            @include resp(font-size, 16px, 19px);
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        nav {
+            margin-bottom: 30px;
+
+            ul {
+                li {
+                    display: inline-block;
+
+                    &:not(:last-of-type) {
+                        margin-bottom: 10px;
+
+                        &:after {
+                            color: #fff;
+                            content: '|';
+                            padding: 0 .625em;
+                        }
+                    }
+
+                    a {
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+
+        .container-fluid {
+            max-width: 1440px;
+            margin: auto;
+        }
+
+        .logo-footer {
+
+            span,
+            img {
+                display: block;
+                margin: 0 0 15px;
+                width: 220px;
+                height: 66px;
+            }
+            span {
+                background: url(/PublishingImages/global/lcc-logo-white-01.svg) center center/100% 100% no-repeat;
+            }
+        }
+
+        .socialBookmarks {
+            margin: 0;
+            background: transparent;
+            padding: 0px;
+            margin: 0 0 1.875em;
+
+            ul {
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+
+                @media (min-width: 768px) {
+                    -webkit-box-pack: end;
+                    -ms-flex-pack: end;
+                    justify-content: flex-end;
+                }
+
+                li {
+                    margin: 0 10px 0 0;
+
+                    &:before {
+                        display:none;
+                    }
+                    &.social-title {
+                        width: 100%;
+                        text-align: left;
+
+                        @media (min-width: 768px) {
+                            width: auto;
+                        }
+                    }
+
+                    h2 {
+                        color: $white;
+                        margin: 0;
+                    }
+
+                    a {
+
+                        &.facebook:after,
+                        &.twitter:after,
+                        &.youtube:after,
+                        &.email:after,
+                        &.instagram:after {
+                            border-radius: 50%;
+                            font-family: FontAwesome;
+                            font-size: 30px;
+                            width: 70px;
+                            height: 70px;
+                            padding-top: 15px;
+                            border: 1px solid $white;
+                            color: $white;
+                            display: block;
+                            text-align: center;
+                            padding-top: 15px;
+                        }
+
+                        &:hover {
+                            text-decoration: none !important;
+
+                            &:after {
+                                background: $white;
+                                color: $teal;
+                            }
+                        }
+
+                        &:focus {
+                            outline: #fbc02d solid 5px;
+                            background: 0 0!important;
+                        }
+
+                        &.facebook:after {
+                            content: "\f09a";
+
+                        }
+
+                        &.twitter:after {
+                            content: "\f099";
+
+                        }
+
+                        &.youtube:after {
+                            content: "\f167";
+
+                        }
+
+
+                        &.instagram:after {
+                            content: "\f16d";
+                        }
+
+                        &.email:after {
+                            content: "\f0e0";
+
+                        }
+
+                        &.footer-bsl-logo {
+                            display: inline-block;
+                            background: url(/PublishingImages/global/logo-bsl.svg) no-repeat;
+                            height: 100px;
+                            width: 100px;
+                        }
+
+                        span {
+                            position: absolute;
+                            width: 1px;
+                            height: 1px;
+                            padding: 0;
+                            margin: -1px;
+                            overflow: hidden;
+                            clip: rect(0,0,0,0);
+                            border: 0;
+                        }
+                    }
+
+                    &:first-of-type {
+                        display: inline-block;
+                        padding-bottom: 0.65em;
+
+                        @media (min-width: 768px) {
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.row {
+    &:after {
+        clear: both;
+        display: table;
+        content: " ";
+    }
+
+    .col-sm-6 {
+        @include mq($from:tablet) {
+            width: 50%;
+            float: left;
+        }
+    }
+}
+
+.accred {
+    margin: 1em;
+
+    &s {
+        background: rgba($teal, 0.7);
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 1440px;
+        margin: auto;
+        @include resp((padding-top, padding-bottom), 25px, 50px);
+
+        @include mq($from:tablet) {
+            justify-content: space-between;
+        }
+    }
+
+    img {
+        height: 50px;
+        width: auto;
+
+        @include mq($from:desktop) {
+            height: 75px;
+        }
+    }
+}

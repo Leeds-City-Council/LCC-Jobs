@@ -1,0 +1,60 @@
+.tile {
+    position: relative;
+    margin:10px;
+
+    @include mq($from:tablet) {
+        width: calc(50% - 20px);
+    }
+
+    &s {
+        max-width:1204px;
+        margin-left: auto;
+        margin-right: auto;
+        @include resp((margin-top, margin-bottom), 50px, 100px);
+
+        @include mq($from:tablet) {
+            display:flex;
+            flex-wrap: wrap;
+        }
+        
+    }
+    
+    a {
+        display:block;
+        font-family:$heading;
+        font-weight: bold;
+        color:$white;
+        @include resp(font-size, 19px, 26px);
+        text-align:center;
+        
+        .overlay {
+            transition: all 130ms ease-in;
+        }
+        
+        &:hover {
+            span {
+                text-decoration: underline;
+                color:$white;
+            }
+            .overlay {
+                background: rgba(#221F1F, 0.9);
+            }
+        }
+        &:focus {
+            span {
+                background:$yellow !important;
+                color:$black-focus !important;
+            }
+        }
+    }
+
+    span {
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%, -50%);
+        max-width:80%;
+        width:100%;
+    }
+}
+
